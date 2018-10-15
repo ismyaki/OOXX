@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+                name="viewModel"
+                type="viewmodel.MainViewModel" />
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="view.MainActivity">
+
+        <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.victory}"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <Button
+                        android:id="@+id/btn0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(0)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(0)}"/>
+
+                <Button
+                        android:id="@+id/btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(1)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(1)}"/>
+
+                <Button
+                        android:id="@+id/btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(2)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(2)}"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <Button
+                        android:id="@+id/btn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(3)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(3)}"/>
+
+                <Button
+                        android:id="@+id/btn4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(4)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(4)}"/>
+
+                <Button
+                        android:id="@+id/btn5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(5)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(5)}"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <Button
+                        android:id="@+id/btn6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(6)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(6)}"/>
+
+                <Button
+                        android:id="@+id/btn7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(7)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(7)}"/>
+
+                <Button
+                        android:id="@+id/btn8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.list.get(8)}"
+                        android:onClick="@{() -> viewModel.onButtonSelect(8)}"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset"
+                android:onClick="@{() -> viewModel.reset()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
